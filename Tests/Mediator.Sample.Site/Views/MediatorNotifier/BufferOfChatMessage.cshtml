@@ -1,0 +1,93 @@
+﻿@using System.Collections
+@using Mediator
+@model IEnumerable
+@{
+    Layout = null;
+}
+@{
+    var messages = Model.Cast<MessageOf<Mediator.Sample.Site.Models.ChatMessage>>();
+}
+
+<script type="text/javascript">
+
+    function getMessages() {
+        $.post("/mediator/chatmessage", null, function (data, s) {
+            if (data.MessageItem != "" && data.MessageItem != undefined) {
+                var $msg = $('<li/>');
+                var text = data.MessageItem.User + ' : ' + data.MessageItem.Message;
+                $msg.html(text); // $('#msgTmplRecv').tmpl(data);
+                $msg.prependTo('#messages');
+                $('#flash-message').html(text);
+                $('#flash-message').fadeIn(1000, function () {
+                    $('#flash-message').fadeOut(2000, function () { $('#flash-message').html(''); });
+                });
+            } else {
+                $('#flash-message').html(data.TimeStamp);
+            } setTimeout(function () {
+                getMessages();
+            }, 1000);
+        });
+    }
+
+    $(document).ready(function () {
+        $('#msgBtn').bind('click', function () {
+            var msgVal = $('#msgBox').val();
+            var userVal = $('#userBox').val();
+            var text = userVal + ' : ' + msgVal;
+            $('#msgBox').val('');
+            $.post("/MediatorNotifier/NotifyChatMessage", { 'message.User': userVal, 'message.Message': msgVal}, function (data, s) {
+                var msg = "error sending message : " + text;
+                if (data.saved == "ok") {
+                    msg = "send message success : " + text;
+                }
+                $('#flash-message').html(text);
+                $('#flash-message').fadeIn(1000, function () {
+                    $('#flash-message').fadeOut(2000, function () { $('#flash-message').html(''); });
+                });
+
+            });
+        });
+
+        // Submit a message on enter key.
+        $('#msgBox').keydown(function (e) {
+            if (e.keyCode == 13) {
+                $('#msgBtn').click();
+            }
+        });
+
+        /// fire off the long polling after timeout so we don't get constant page loading
+        setTimeout(function () {
+            getMessages();
+        }, 100);
+    });
+</script>
+
+<div class="row">
+    @*<input class="input-small" type="text"id="msgBox" placeholder="message to site users">*@
+    <div class="span1"></div>
+    <div class="span9 inline-inputs">
+        <div class="inline-inputs">
+            <input id="msgBox" class="medium" name="msgBox" size="16" type="text" placeholder="your message" autofocus>&nbsp;
+            <input id="userBox" class="medium" name="userBox" size="16" type="text" placeholder="user name" required>&nbsp;
+            <input class="btn success" value="Send" type="submit" name="msgBtn" id="msgBtn">&nbsp;
+            <span id="flash-message" class="label success">***</span>   
+        </div>
+        
+    </div>
+    
+</div>
+<div class="row">
+    @*<input class="input-small" type="text"id="msgBox" placeholder="message to site users">*@
+    <div class="span1"></div>
+    <div class="span9">
+        <div>
+            <ul class="unstyled" id="messages">
+                @foreach (var item in messages)
+                {
+                    <li>@item.MessageItem.User : @item.MessageItem.Message</li>   
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+

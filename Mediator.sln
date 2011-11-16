@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mediator", "Src\Mediator\Mediator.csproj", "{61110C58-5ABF-4822-AA10-37D09AEEE38B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mediator-Rx", "Src\Mediator-Rx\Mediator-Rx.csproj", "{753361AC-2150-4FD2-9485-7643B1DB920A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{A4C19E71-B5E2-4932-ACF7-FBC257338AB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mediator.Tests", "Tests\Mediator.Tests\Mediator.Tests.csproj", "{78ECD748-EBC9-499E-B69E-2C18C8504486}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mediator.Sample.Site", "Tests\Mediator.Sample.Site\Mediator.Sample.Site.csproj", "{CB3DA4EB-FF43-434C-BC66-B5CCC6091179}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{61110C58-5ABF-4822-AA10-37D09AEEE38B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61110C58-5ABF-4822-AA10-37D09AEEE38B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61110C58-5ABF-4822-AA10-37D09AEEE38B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61110C58-5ABF-4822-AA10-37D09AEEE38B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{753361AC-2150-4FD2-9485-7643B1DB920A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{753361AC-2150-4FD2-9485-7643B1DB920A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{753361AC-2150-4FD2-9485-7643B1DB920A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{753361AC-2150-4FD2-9485-7643B1DB920A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78ECD748-EBC9-499E-B69E-2C18C8504486}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78ECD748-EBC9-499E-B69E-2C18C8504486}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78ECD748-EBC9-499E-B69E-2C18C8504486}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78ECD748-EBC9-499E-B69E-2C18C8504486}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB3DA4EB-FF43-434C-BC66-B5CCC6091179}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB3DA4EB-FF43-434C-BC66-B5CCC6091179}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB3DA4EB-FF43-434C-BC66-B5CCC6091179}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB3DA4EB-FF43-434C-BC66-B5CCC6091179}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{78ECD748-EBC9-499E-B69E-2C18C8504486} = {A4C19E71-B5E2-4932-ACF7-FBC257338AB1}
+		{CB3DA4EB-FF43-434C-BC66-B5CCC6091179} = {A4C19E71-B5E2-4932-ACF7-FBC257338AB1}
+	EndGlobalSection
+EndGlobal

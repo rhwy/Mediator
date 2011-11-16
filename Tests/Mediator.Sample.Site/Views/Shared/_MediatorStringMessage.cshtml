@@ -1,0 +1,71 @@
+﻿@using System.Collections
+@using Mediator
+@model IEnumerable
+
+@{
+    var messages = Model.Cast<MessageOf<string>>();
+}
+
+<script type="text/javascript">
+
+function getMessages() {
+    $.post("/mediator/string", null, function (data, s) {
+        if (data.MessageItem != "" && data.MessageItem != undefined) {
+            var $msg = $('<div/>');
+            $msg.html(data.MessageItem); // $('#msgTmplRecv').tmpl(data);
+            $msg.prependTo('#messages');
+        }
+        $('#flash-message').html(data.TimeStamp);
+        $('#flash-message').fadeIn(100, function () { $('#flash-message').fadeOut(1000); });
+        $('#flash-message').html('');
+        setTimeout(function () {
+            getMessages();
+        }, 500);
+    });
+}
+
+$(document).ready(function () {
+    $('#msgBtn').bind('click', function () {
+        var msgVal = $('#msgBox').val();
+        $('#msgBox').val('');
+        $.post("/MediatorNotifier/NotifyStringMessage", { message: msgVal }, function (data, s) {
+            var msg = "error sending message : " + msgVal;
+            if (data.saved == "ok") {
+                msg = "send message success : " + msgVal;
+            }
+            $('#flash-message').html(msg);
+            $('#flash-message').fadeIn(100, function () { $('#flash-message').fadeOut(2000); });
+            $('#flash-message').html('');
+        });
+    });
+
+    // Submit a message on enter key.
+    $('#msgBox').keydown(function (e) {
+        if (e.keyCode == 13) {
+            $('#msgBtn').click();
+        }
+    });
+
+    /// fire off the long polling after timeout so we don't get constant page loading
+    setTimeout(function () {
+        getMessages();
+    }, 100);
+});
+</script>
+
+<div class="nav pull-right">
+    <input class="input-small" type="text"id="msgBox" placeholder="message to site users">
+    <button class="btn success" type="submit" id="msgBtn">Message</button>
+</div>
+
+<div id="flash-message"></div>
+<div id="messages"></div>
+
+<ul>
+    @foreach (var item in messages)
+    {
+        <li>@item.MessageItem</li>   
+    }
+</ul>
+    
+

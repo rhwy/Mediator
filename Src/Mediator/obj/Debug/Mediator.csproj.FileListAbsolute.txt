@@ -1,0 +1,8 @@
+E:\Sources\Mine\Mediator\Src\Mediator\obj\Debug\ResolveAssemblyReference.cache
+E:\Sources\Mine\Mediator\Src\Mediator\bin\Debug\Mediator.dll
+E:\Sources\Mine\Mediator\Src\Mediator\bin\Debug\Mediator.pdb
+E:\Sources\Mine\Mediator\Src\Mediator\obj\Debug\Mediator.dll
+E:\Sources\Mine\Mediator\Src\Mediator\obj\Debug\Mediator.pdb
+E:\Sources\Mine\Mediator\Src\Mediator\bin\Debug\ServiceStack.Text.dll
+E:\Sources\Mine\Mediator\Src\Mediator\bin\Debug\ServiceStack.Text.pdb
+E:\Sources\Mine\Mediator\Src\Mediator\bin\Debug\ServiceStack.Text.xml

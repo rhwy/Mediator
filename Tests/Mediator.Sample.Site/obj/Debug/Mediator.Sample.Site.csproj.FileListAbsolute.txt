@@ -1,0 +1,12 @@
+E:\Sources\Mine\Mediator\Tests\Mediator.Sample.Site\bin\Mediator.Sample.Site.dll
+E:\Sources\Mine\Mediator\Tests\Mediator.Sample.Site\bin\Mediator.Sample.Site.pdb
+E:\Sources\Mine\Mediator\Tests\Mediator.Sample.Site\bin\EntityFramework.dll
+E:\Sources\Mine\Mediator\Tests\Mediator.Sample.Site\bin\Mediator.dll
+E:\Sources\Mine\Mediator\Tests\Mediator.Sample.Site\bin\ServiceStack.Text.dll
+E:\Sources\Mine\Mediator\Tests\Mediator.Sample.Site\bin\Mediator.pdb
+E:\Sources\Mine\Mediator\Tests\Mediator.Sample.Site\bin\EntityFramework.xml
+E:\Sources\Mine\Mediator\Tests\Mediator.Sample.Site\bin\ServiceStack.Text.pdb
+E:\Sources\Mine\Mediator\Tests\Mediator.Sample.Site\bin\ServiceStack.Text.xml
+E:\Sources\Mine\Mediator\Tests\Mediator.Sample.Site\obj\Debug\ResolveAssemblyReference.cache
+E:\Sources\Mine\Mediator\Tests\Mediator.Sample.Site\obj\Debug\Mediator.Sample.Site.dll
+E:\Sources\Mine\Mediator\Tests\Mediator.Sample.Site\obj\Debug\Mediator.Sample.Site.pdb

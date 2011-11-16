@@ -1,0 +1,8 @@
+/**************************************
+	REVISION INFORMATION
+**************************************/
+
+TIME 		: $UTCDATETIME$
+REV NUM		: $REVNUM$
+REV ID		: $REVID$
+BRANCH		: $BRANCH$

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="E:\Sources\Mine\Mediator\Tests\Mediator.Tests\bin\Debug\Mediator.Tests.dll" total="9" errors="1" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2011-11-10" time="09:46:57">
+  <environment nunit-version="2.5.8.10295" clr-version="2.0.50727.5446" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="E:\Sources\Mine\Mediator\Tests\Mediator.Tests\bin\Debug" machine-name="RC7DEV2" user="Administrator" user-domain="RC7DEV2" />
+  <culture-info current-culture="fr-FR" current-uiculture="en-US" />
+  <test-suite type="Assembly" name="E:\Sources\Mine\Mediator\Tests\Mediator.Tests\bin\Debug\Mediator.Tests.dll" executed="True" result="Failure" success="False" time="0.391" asserts="0">
+    <results>
+      <test-suite type="Namespace" name="Mediator" executed="True" result="Failure" success="False" time="0.328" asserts="0">
+        <results>
+          <test-suite type="Namespace" name="Tests" executed="True" result="Failure" success="False" time="0.313" asserts="0">
+            <results>
+              <test-suite type="TestFixture" name="HelperTests" executed="True" result="Success" success="True" time="0.078" asserts="0">
+                <results>
+                  <test-case name="Mediator.Tests.HelperTests.should_get_valid_date_from_unix_ticks" executed="True" result="Success" success="True" time="0.047" asserts="1" />
+                </results>
+              </test-suite>
+              <test-suite type="Namespace" name="Model" executed="True" result="Success" success="True" time="0.047" asserts="0">
+                <results>
+                  <test-suite type="TestFixture" name="EventBusIdentifierTests" executed="True" result="Success" success="True" time="0.016" asserts="0">
+                    <results>
+                      <test-case name="Mediator.Tests.Model.EventBusIdentifierTests.All_Constructors_should_provide_the_same_id_if_params_default" executed="True" result="Success" success="True" time="0.016" asserts="1" />
+                      <test-case name="Mediator.Tests.Model.EventBusIdentifierTests.Should_get_valid_Key" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                      <test-case name="Mediator.Tests.Model.EventBusIdentifierTests.Should_use_equalty_based_on_key" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                      <test-case name="Mediator.Tests.Model.EventBusIdentifierTests.verify_equalty_operator" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="MessageOfTests" executed="True" result="Success" success="True" time="0.031" asserts="0">
+                    <results>
+                      <test-case name="Mediator.Tests.Model.MessageOfTests.ensure_message_is_serializable" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                      <test-case name="Mediator.Tests.Model.MessageOfTests.ensure_message_with_source_is_serializable" executed="True" result="Success" success="True" time="0.016" asserts="1" />
+                      <test-case name="Mediator.Tests.Model.MessageOfTests.should_get_valid_unix_timestamp_on_creation" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+              <test-suite type="Namespace" name="Transport" executed="True" result="Failure" success="False" time="0.188" asserts="0">
+                <results>
+                  <test-suite type="TestFixture" name="AsyncOperationTest" executed="True" result="Inconclusive" success="False" time="0.000" asserts="0" />
+                  <test-suite type="TestFixture" name="EventBusRouterTests" executed="True" result="Failure" success="False" time="0.016" asserts="0">
+                    <results>
+                      <test-case name="Mediator.Tests.Transport.EventBusRouterTests.should_extract_handler_tokens" executed="True" result="Error" success="False" time="0.016" asserts="1">
+                        <failure>
+                          <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                          <stack-trace><![CDATA[at Mediator.EventBusIdentifier.ToString() in E:\Sources\Mine\Mediator\Src\Mediator\Model\EventBusIdentifier.cs:line 31
+at Mediator.EventBusIdentifier.get_Key() in E:\Sources\Mine\Mediator\Src\Mediator\Model\EventBusIdentifier.cs:line 38
+at Mediator.EventBusIdentifier.Equals(Object obj) in E:\Sources\Mine\Mediator\Src\Mediator\Model\EventBusIdentifier.cs:line 54
+at NUnit.Framework.Constraints.NUnitEqualityComparer.ObjectsEqual(Object x, Object y)
+at NUnit.Framework.Constraints.EqualConstraint.Matches(Object actual)
+at Mediator.Tests.Transport.EventBusRouterTests.should_extract_handler_tokens() in E:\Sources\Mine\Mediator\Tests\Mediator.Tests\Transport\EventBusRouterTests.cs:line 20
+]]></stack-trace>
+                        </failure>
+                      </test-case>
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>

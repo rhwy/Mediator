@@ -1,0 +1,137 @@
+﻿@{
+    ViewBag.Title = "Start";
+}
+
+<h2>@ViewBag.Message</h2>
+<p>
+    Mediator is a simple to use and to learn framwork to do real time html applications over traditional http.
+</p>
+<p>
+    This is an help over a sample to learn some kind of long pooling with asp.net platform
+</p>
+
+<h2>Mediator Library Usage</h2>
+
+<h3>1. Configuration</h3>
+
+<p>1. Import the Mediator.dll in your project/web site</p>
+
+<p>2. by default you should have the run all managed modules enabled:
+<pre>
+    &lt;modules runAllManagedModulesForAllRequests="true"/&gt;
+</pre>
+If it is the case, you don't need to add any configuration in your web.config, our handler will be called automaticaly.
+If it is set to false, you should add manually the route handler.
+</p>
+
+<p>3. You should define the route used by the bus event messages. There is no default route, we let it at your conveniance. Just add the route to our custom routeHandler just like any other routes:
+<pre>
+//Messages bus
+routes.Add(
+    "mediator",
+    new Route(
+        "mediator/{type}/{name}",
+        new RouteValueDictionary(new { type = "string", name = "default" }),
+        new EventBusRouteHandler()));
+
+</pre>
+
+this route is used to listen to future messages. This mecanism doesn't handle the notification of the messages, we want it to be availble from anywhere you need in your code and we want to allow it as it should be cleaner for your app. 
+</p>
+
+<h3>2. Server code</h3>
+
+<p>1. Push messages</p>
+<p>As in our exemple, you should add a special route to push the messages :
+<pre>
+ //Message push
+routes.MapRoute(
+    "Push", // default route
+    "MediatorNotifier/{action}",
+    new { controller = "MediatorNotifier", action = "Index" } // Parameter defaults
+); 
+</pre>
+
+This is the easiest way to centralize all your notifications. This is then, how a notification action should look like:
+<pre>
+[HttpPost]
+public ActionResult NotifyChatMessage(string name, ChatMessage message)
+{
+    MediatorBus.Push&lt;ChatMessage&gt;(this, message);
+    return Json(new { saved = "ok" });
+}
+</pre>
+
+There is also another interest in using an asp.net mvc action, is to automaticaly use the mvc Default Model Binder (as in our exemple, we use directly our ChatMessage model)
+</p>
+
+<p>2. From server side, you should want to print current messages from the buffer when loading a page.</p> 
+<p>In order to do this you should get the current buffer directly from the mediator buffer helper, use it and return it to view as any other data you use to manipulate. In our exemple, we choose to pass it through a partial action in order to centralize all these calls and decouple them from the view. In our controller:
+<pre>
+[ChildActionOnly]
+public ActionResult BufferOfChatMessage()
+{
+    ViewBag.Message = "Welcome to long polling demo!";
+    var messageBuffer = MediatorBus.BufferOf&lt;ChatMessage&gt;();
+    return PartialView(messageBuffer);
+}
+</pre>
+
+If you centralize it in a Mediator controller, you should call it from your original view like this:
+<pre>
+&lt;h2&gt;Simple message exchange&lt;/h2&gt;
+&lt;p&gt;
+ @@Html.Action("BufferOfChatMessage","MediatorNotifier")
+&lt;/p&gt;
+</pre>
+
+The buffer list is an untyped simple IEnumerable. you should print your messages in the partial view like this:
+<pre>
+@@model IEnumerable
+@@{
+    Layout = null;
+}
+@@{
+    var messages = Model.Cast&lt;MessageOf&lt;ChatMessage&gt;&gt;();
+}
+&lt;ul class="unstyled" id="messages"&gt;
+    @@foreach (var item in messages)
+    {
+        &lt;li&gt;@@item.MessageItem.User : @@item.MessageItem.Message&lt;/li&gt;   
+    }
+&lt;/ul&gt;
+</pre>
+</p>
+
+<h3>3. Client code</h3>
+
+<p>From client side, the simplest way it to push ajax messages with the help of jQuery</p>
+<p>After page load, just define a recursive ajax call like this in order to subscribe to messages:
+<pre>
+function getMessages() {
+    $.post("/mediator/string", null, function (data, s) {
+        if (data.MessageItem != "" && data.MessageItem != undefined) {
+            var $msg = $('&lt;li/&gt;');
+            $msg.html(data.MessageItem); 
+            $msg.prependTo('#messages');
+        } else {
+            console.log(data.TimeStamp);
+        }
+        setTimeout(function () {
+            getMessages();
+        }, 10000);
+    });
+}
+</pre>
+
+For the send messages part, it's nothing more than traditional asp.net mvc if you want to choose the same paradigm as me ;-).
+</p>
+
+<h3>4. Get MORE!</h3>
+<p>This is a simple and functional framework. It's initial target is mainly to help learning async handlers and long polling other asp.net.It's not at this time a production grade framework but it is relatively safe to use. By the way, it is yours now and it depends only on you if you want to help and enhance it!</p>
+<p>So fork it, push your updates and help us make it better!</p>
+
+<p>If you want more mature frameworks with quite similar functionalities, have a great look on <a href="https://github.com/SignalR/SignalR">SignalR!</a></p>
+<p>If you don't need for this information push to be on asp.net, the better way is certainly today to build a signaling system with <a href="http://nodejs.org">Node.Js</a> in compbination with the <a href="http://socket.io/">Socket.io</a> framework</p>
+
+<div class="alert-message success">Learn, share, enjoy!</div>

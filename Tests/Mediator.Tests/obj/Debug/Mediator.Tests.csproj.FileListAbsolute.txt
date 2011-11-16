@@ -1,0 +1,17 @@
+E:\Sources\Mine\Mediator\Tests\Mediator.Tests\obj\Debug\ResolveAssemblyReference.cache
+E:\Sources\Mine\Mediator\Tests\Mediator.Tests\bin\Debug\Mediator.Tests.dll
+E:\Sources\Mine\Mediator\Tests\Mediator.Tests\bin\Debug\Mediator.Tests.pdb
+E:\Sources\Mine\Mediator\Tests\Mediator.Tests\bin\Debug\Mediator.dll
+E:\Sources\Mine\Mediator\Tests\Mediator.Tests\bin\Debug\nunit.framework.dll
+E:\Sources\Mine\Mediator\Tests\Mediator.Tests\bin\Debug\nunit.mocks.dll
+E:\Sources\Mine\Mediator\Tests\Mediator.Tests\bin\Debug\pnunit.framework.dll
+E:\Sources\Mine\Mediator\Tests\Mediator.Tests\bin\Debug\ServiceStack.Text.dll
+E:\Sources\Mine\Mediator\Tests\Mediator.Tests\bin\Debug\Mediator.pdb
+E:\Sources\Mine\Mediator\Tests\Mediator.Tests\bin\Debug\nunit.framework.xml
+E:\Sources\Mine\Mediator\Tests\Mediator.Tests\bin\Debug\ServiceStack.Text.pdb
+E:\Sources\Mine\Mediator\Tests\Mediator.Tests\bin\Debug\ServiceStack.Text.xml
+E:\Sources\Mine\Mediator\Tests\Mediator.Tests\obj\Debug\Mediator.Tests.dll
+E:\Sources\Mine\Mediator\Tests\Mediator.Tests\obj\Debug\Mediator.Tests.pdb
+E:\Sources\Mine\Mediator\Tests\Mediator.Tests\bin\Debug\Moq.dll
+E:\Sources\Mine\Mediator\Tests\Mediator.Tests\bin\Debug\Moq.pdb
+E:\Sources\Mine\Mediator\Tests\Mediator.Tests\bin\Debug\Moq.xml
