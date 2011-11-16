@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using Mediator.Sample.Site.Models;
+using Mediator_Rx;
 
 namespace Mediator.Sample.Site
 {
@@ -39,6 +40,14 @@ namespace Mediator.Sample.Site
                     "mediator/{type}/{name}",
                     new RouteValueDictionary(new { type = "string", name = "default" }),
                     new EventBusRouteHandler()));
+
+            //Messages bus
+            routes.Add(
+                "mediator-rx",
+                new Route(
+                    "mrx/{type}/{name}",
+                    new RouteValueDictionary(new { type = "string", name = "default" }),
+                    new ObservableEventBusRouteHandler()));
 
             //root navigation
             routes.MapRoute(

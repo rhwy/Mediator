@@ -8,3 +8,5 @@ E:\Sources\Mine\Mediator\Src\Mediator-Rx\obj\Debug\Mediator-Rx.pdb
 E:\Sources\Mine\Mediator\Src\Mediator-Rx\bin\Debug\ServiceStack.Text.dll
 E:\Sources\Mine\Mediator\Src\Mediator-Rx\bin\Debug\ServiceStack.Text.pdb
 E:\Sources\Mine\Mediator\Src\Mediator-Rx\bin\Debug\ServiceStack.Text.xml
+E:\Sources\Mine\Mediator\Src\Mediator-Rx\bin\Debug\System.Reactive.dll
+E:\Sources\Mine\Mediator\Src\Mediator-Rx\bin\Debug\System.Reactive.xml

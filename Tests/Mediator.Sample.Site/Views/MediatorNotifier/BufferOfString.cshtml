@@ -11,10 +11,10 @@
 <script type="text/javascript">
 
     function getMessages() {
-        $.post("/mediator/string", null, function (data, s) {
+        $.post("/mrx/string", null, function (data, s) {
             if (data.MessageItem != "" && data.MessageItem != undefined) {
                 var $msg = $('<li/>');
-                $msg.html(data.MessageItem); // $('#msgTmplRecv').tmpl(data);
+                $msg.html(data.MessageItem); 
                 $msg.prependTo('#messages');
                 $('#flash-message').html(data.MessageItem);
                 $('#flash-message').fadeIn(1000, function () {
@@ -22,9 +22,10 @@
                 });
             } else {
                 $('#flash-message').html(data.TimeStamp);
-            }setTimeout(function () {
+            }
+            setTimeout(function () {
                 getMessages();
-            }, 1000);
+            }, 10000);
         });
     }
 
@@ -52,7 +53,7 @@
             }
         });
 
-        /// fire off the long polling after timeout so we don't get constant page loading
+        
         setTimeout(function () {
             getMessages();
         }, 100);

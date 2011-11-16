@@ -10,3 +10,7 @@ E:\Sources\Mine\Mediator\Tests\Mediator.Sample.Site\bin\ServiceStack.Text.xml
 E:\Sources\Mine\Mediator\Tests\Mediator.Sample.Site\obj\Debug\ResolveAssemblyReference.cache
 E:\Sources\Mine\Mediator\Tests\Mediator.Sample.Site\obj\Debug\Mediator.Sample.Site.dll
 E:\Sources\Mine\Mediator\Tests\Mediator.Sample.Site\obj\Debug\Mediator.Sample.Site.pdb
+E:\Sources\Mine\Mediator\Tests\Mediator.Sample.Site\bin\Mediator-Rx.dll
+E:\Sources\Mine\Mediator\Tests\Mediator.Sample.Site\bin\System.Reactive.dll
+E:\Sources\Mine\Mediator\Tests\Mediator.Sample.Site\bin\Mediator-Rx.pdb
+E:\Sources\Mine\Mediator\Tests\Mediator.Sample.Site\bin\System.Reactive.xml

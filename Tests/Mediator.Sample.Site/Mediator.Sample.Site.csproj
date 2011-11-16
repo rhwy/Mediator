@@ -159,6 +159,10 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Src\Mediator-Rx\Mediator-Rx.csproj">
+      <Project>{753361AC-2150-4FD2-9485-7643B1DB920A}</Project>
+      <Name>Mediator-Rx</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Src\Mediator\Mediator.csproj">
       <Project>{61110C58-5ABF-4822-AA10-37D09AEEE38B}</Project>
       <Name>Mediator</Name>
