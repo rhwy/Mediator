@@ -13,7 +13,7 @@ namespace Mediator.Tests.Model
         public void Should_get_valid_Key()
         {
             EventBusIdentifier id = new EventBusIdentifier("test",typeof(string));
-            Assert.That(id.Key,Is.EqualTo("String-test"));
+            Assert.That(id.Key,Is.EqualTo("string-test"));
         }
 
         [Test]

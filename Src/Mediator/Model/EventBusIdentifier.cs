@@ -31,7 +31,7 @@ namespace Mediator
 
         public EventBusIdentifier(string name, string type)
         {
-            BusType = string.IsNullOrEmpty(type) ? "dynamic" : type.ToLower();
+            BusType = string.IsNullOrEmpty(type) ? "object" : type.ToLower();
             Name = string.IsNullOrEmpty(name) ? "default" : name;
         }
 

@@ -14,7 +14,7 @@ namespace Mediator.Tests.Transport
         [Test]
         public void should_extract_handler_tokens()
         {
-            EventBusIdentifier actual = EventBusRouter.ExtractIdentifier(MockHelper.GetRouterRequestContext("/bus","string","test"));
+            EventBusIdentifier actual = EventBusRouter.ExtractIdentifier(MockHelper.GetRouterRequestContext("/mediator","string","test"));
             EventBusIdentifier expected = new EventBusIdentifier("test","string");
 
             Assert.That(actual,Is.EqualTo(expected));

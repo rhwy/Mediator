@@ -14,3 +14,10 @@ E:\Sources\Mine\Mediator\Tests\Mediator.Sample.Site\bin\Mediator-Rx.dll
 E:\Sources\Mine\Mediator\Tests\Mediator.Sample.Site\bin\System.Reactive.dll
 E:\Sources\Mine\Mediator\Tests\Mediator.Sample.Site\bin\Mediator-Rx.pdb
 E:\Sources\Mine\Mediator\Tests\Mediator.Sample.Site\bin\System.Reactive.xml
+E:\Sources\Mine\Mediator\Tests\Mediator.Sample.Site\bin\Mediator.Helpers.dll
+E:\Sources\Mine\Mediator\Tests\Mediator.Sample.Site\bin\Microsoft.Web.Infrastructure.dll
+E:\Sources\Mine\Mediator\Tests\Mediator.Sample.Site\bin\StructureMap.dll
+E:\Sources\Mine\Mediator\Tests\Mediator.Sample.Site\bin\WebActivator.dll
+E:\Sources\Mine\Mediator\Tests\Mediator.Sample.Site\bin\Mediator.Helpers.pdb
+E:\Sources\Mine\Mediator\Tests\Mediator.Sample.Site\bin\StructureMap.pdb
+E:\Sources\Mine\Mediator\Tests\Mediator.Sample.Site\bin\StructureMap.xml

@@ -30,12 +30,29 @@
     }
 
     $(document).ready(function () {
+        //        $('#msgBtn').bind('click', function () {
+        //            var msgVal = $('#msgBox').val();
+        //            var userVal = $('#userBox').val();
+        //            var text = userVal + ' : ' + msgVal;
+        //            $('#msgBox').val('');
+        //            $.post("/MediatorNotifier/NotifyChatMessage", { 'message.User': userVal, 'message.Message': msgVal}, function (data, s) {
+        //                var msg = "error sending message : " + text;
+        //                if (data.saved == "ok") {
+        //                    msg = "send message success : " + text;
+        //                }
+        //                $('#flash-message').html(text);
+        //                $('#flash-message').fadeIn(1000, function () {
+        //                    $('#flash-message').fadeOut(2000, function () { $('#flash-message').html(''); });
+        //                });
+
+        //            });
+        //        });
         $('#msgBtn').bind('click', function () {
             var msgVal = $('#msgBox').val();
             var userVal = $('#userBox').val();
             var text = userVal + ' : ' + msgVal;
             $('#msgBox').val('');
-            $.post("/MediatorNotifier/NotifyChatMessage", { 'message.User': userVal, 'message.Message': msgVal}, function (data, s) {
+            $.post("/MediatorNotifier/NotifyChatMessageJson", { message: JSON.stringify({ 'User': userVal, 'Message': msgVal }) }, function (data, s) {
                 var msg = "error sending message : " + text;
                 if (data.saved == "ok") {
                     msg = "send message success : " + text;
@@ -47,7 +64,6 @@
 
             });
         });
-
         // Submit a message on enter key.
         $('#msgBox').keydown(function (e) {
             if (e.keyCode == 13) {

@@ -52,6 +52,10 @@ namespace Mediator
 
         public void StartAsyncWork()
         {
+            int a, b;
+
+            ThreadPool.GetAvailableThreads(out a, out b);
+
             ThreadPool.QueueUserWorkItem(new WaitCallback(StartAsyncTask), null);
         }
 

@@ -52,7 +52,7 @@ namespace Mediator
         //untyped registration with no name
         public void Register(string name)
         {
-            Register(new EventBus<dynamic>(name));
+            Register(new EventBus<object>(name));
         }
         
         public IEventBus Get(string name)

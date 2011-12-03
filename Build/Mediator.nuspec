@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <id>Mediator</id>
+    <version>1.1.0.0</version>
+    <authors>Rui Carvalho</authors>
+    <owners>Rui Carvalho</owners>
+    <licenseUrl>https://raw.github.com/rhwy/Mediator/master/Commons/legal.txt</licenseUrl>
+    <projectUrl>https://github.com/rhwy/Mediator</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>small and efficient push framework for asp.net</description>
+    <summary>this library allows data push in asp.net forms/mvc with simplicity</summary>
+    <language>en-US</language>
+  </metadata>
+  <files>
+    <file src="Bins\Mediator.dll" target="lib" />
+  </files>
+</package>

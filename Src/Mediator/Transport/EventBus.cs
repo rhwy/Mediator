@@ -45,7 +45,7 @@ namespace Mediator
             var buffer = new List<MessageOf<T>>();
             lock(_lockQueue)
             {
-                return MessageBuffer
+                buffer = MessageBuffer
                     .Where(m=>m.MessageItem != null)
                     .OrderByDescending(m=>m.TimeStamp)
                     .ToList();
@@ -58,7 +58,7 @@ namespace Mediator
             var buffer = new List<MessageOf<T>>();
             lock(_lockQueue)
             {
-                return MessageBuffer.Where(m => m.TimeStamp >= ticks).ToList();
+                buffer = MessageBuffer.Where(m => m.TimeStamp >= ticks).ToList();
             }
             return buffer;
         }
@@ -68,7 +68,7 @@ namespace Mediator
             var buffer = new List<MessageOf<T>>();
             lock (_lockQueue)
             {
-                return MessageBuffer.Where(m => m.TimeStamp >= time.ToUnixTicks()).ToList();
+                buffer = MessageBuffer.Where(m => m.TimeStamp >= time.ToUnixTicks()).ToList();
             }
             return buffer;
         }

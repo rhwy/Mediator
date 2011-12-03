@@ -14,7 +14,7 @@ namespace Mediator.Sample.Site.Controllers
         public ActionResult BufferOfString()
         {
             ViewBag.Message = "Welcome to long polling demo!";
-            var messageBuffer = MediatorBus.BufferOf<string>();
+            var messageBuffer = MediatorBus.GetMessages<string>();
             return PartialView(messageBuffer);
         }
 
@@ -22,22 +22,48 @@ namespace Mediator.Sample.Site.Controllers
         public ActionResult BufferOfChatMessage()
         {
             ViewBag.Message = "Welcome to long polling demo!";
-            var messageBuffer = MediatorBus.BufferOf<ChatMessage>();
+            var messageBuffer = MediatorBus.GetMessages<ChatMessage>();
             return PartialView(messageBuffer);
         }
 
         [HttpPost]
         public ActionResult NotifyStringMessage(string name, string message)
         {
-            MediatorBus.Push<string>(this, message);
+            MediatorBus.Send<string>(this, message);
             return Json(new { saved = "ok" });
         }
 
         [HttpPost]
         public ActionResult NotifyChatMessage(string name, ChatMessage message)
         {
-            MediatorBus.Push<ChatMessage>(this, message);
+            MediatorBus.Send<ChatMessage>(this, message);
             return Json(new { saved = "ok" });
         }
+
+        
+        [HttpPost]
+        public ActionResult NotifyChatMessageJson(string name, [ModelBinder(typeof(JsonMessageBinder))] ChatMessage message)
+        {
+            MediatorBus.Send<ChatMessage>(this, message);
+            return Json(new { saved = "ok" });
+        }
+
+    }
+
+    public class JsonMessageBinder : IModelBinder
+    {
+
+        #region IModelBinder Members
+
+        public object BindModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
+        {
+            Type expectedType = bindingContext.ModelType;
+            string modelName = bindingContext.ModelName;
+            string value = controllerContext.HttpContext.Request.Form[modelName];
+            object result = ServiceStack.Text.JsonSerializer.DeserializeFromString(value, expectedType);
+            return result;
+        }
+
+        #endregion
     }
 }
