@@ -9,15 +9,14 @@
 		<ProjectSrc>$(ProjectRoot)\Src</ProjectSrc>
 		<ProjectBin>$(ProjectSrc)\$(ProjectRootName)\bin\$(Configuration)</ProjectBin>
 		<DropDirectory>$(ProjectRoot)\Bins</DropDirectory>
-		<DropDirectoryAllAssemblies>$(DropDirectory)\FrameworkAllAssemblies</DropDirectoryAllAssemblies>
+		<DropDirectoryAllAssemblies>$(DropDirectory)\AllAssemblies</DropDirectoryAllAssemblies>
 		<DropDirectoryMerged>$(DropDirectory)\MergedFramework</DropDirectoryMerged>
 		<DropDirectoryLog>$(DropDirectory)\Log</DropDirectoryLog>
 		<ILMergeExe>$(ProjectRoot)\Tools\ILMerge.exe</ILMergeExe>
 		<NugetExe>$(ProjectRoot)\Tools\nuget.exe</NugetExe>
-		<TargetProjectName>ArtOfNet.ObjectNull.Framework</TargetProjectName>
+		<TargetProjectName>Mediator</TargetProjectName>
 		<NugetManifest>$(ProjectRoot)\$(TargetProjectName).nuspec</NugetManifest>
 		<DotNet4ReferenceAssemblies>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0</DotNet4ReferenceAssemblies>
-		<LocalPackagesFolder>E:\Sources\Packages\</LocalPackagesFolder>
 		<LegalFileSource>$(ProjectRoot)\Common\legal.txt</LegalFileSource>
     </PropertyGroup>
 	<PropertyGroup>
@@ -42,7 +41,7 @@
       </LegalInsertTransform>
     </ItemGroup>
   
-	  <Target Name="Start" DependsOnTargets="Intro;UpdateVsixVersion;Build;CreateDropDirectories;CopyAllFrameworkAssembliesToDrops;NugetPack">
+	  <Target Name="Start" DependsOnTargets="Intro;UpdateCommonVersion;Build;CreateDropDirectories;CopyAllFrameworkAssembliesToDrops;NugetPack">
     </Target>
 	
 	  <!-- INFO : BUILD ALL Sources -->
@@ -50,7 +49,7 @@
 		  <Message Text="[Building solution with Version Number $(Version)]" />
 	  </Target>
   
-	  <Target Name="UpdateVsixVersion" Condition="'$(BuildNumber)' != ''">
+	  <Target Name="UpdateCommonVersion" Condition="'$(BuildNumber)' != ''">
 		  <Message Text="Updating Common Assembly info with current build number ($(Version))" />
       <RegexTransform Items="@(RegexTransform)" />
     </Target>
@@ -62,7 +61,7 @@
   
 	  <Target Name="Build">
 		  <Message Text="Building the Solution." />
-      <MSBuild Projects="$(ProjectRoot)\Src\ObjectNull.sln" Targets="Build" />
+      <MSBuild Projects="$(ProjectRoot)\Mediator.sln" Targets="Build" />
     </Target>
 	
 	  <!-- INFO : Create,Merge,Copy Resulting binaries -->

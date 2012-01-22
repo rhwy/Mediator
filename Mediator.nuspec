@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <id>Mediator</id>
+    <version>1.0</version>
+    <authors>Rui Carvalho</authors>
+    <owners>Rui Carvalho</owners>
+    <licenseUrl>http://www.artofnet.com/projects/common/licence.txt</licenseUrl>
+    <projectUrl>https://github.com/rhwy/mediator</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Mediator is a simple to use and to learn framwork to do real time html applications over traditional http.</description>
+    <summary>Mediator is a simple to use and to learn framwork to do real time html applications over traditional http.</summary>
+    <language>en-US</language>
+    <dependencies>
+      <dependency  id="ServiceStack.Text" version="3.2.2" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="Bins\AllAssemblies\Mediator.dll" target="lib" />
+  </files>
+</package>
