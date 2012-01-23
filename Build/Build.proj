@@ -90,7 +90,6 @@
 		  </ItemGroup>
 		  <Message Text="Preparing a nuget package" />
 		  <Exec Command="&quot;$(NugetExe)&quot; pack &quot;$(NugetManifest)&quot; -o &quot;$(DropDirectory)&quot;" />
-		  <Message Text="pushing the nuget package to local repository" />
-		  <Copy ContinueOnError="false" SourceFiles="@(compiledPackage)" DestinationFolder="$(LocalPackagesFolder)" />
+		 
     </Target>	
 </Project>
