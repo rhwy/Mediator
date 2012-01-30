@@ -18,13 +18,15 @@ This is an help over a sample to learn some kind of long pooling with asp.net pl
  
 3. You should define the route used by the bus event messages. There is no default route, we let it at your conveniance. Just add the route to our custom routeHandler just like any other routes:
  
-     //Messages bus
-    routes.Add(
-        "mediator",
-        new Route(
-            "mediator/{type}/{name}",
-            new RouteValueDictionary(new { type = "string", name = "default" }),
-            new EventBusRouteHandler()));
+ 
+         //Messages bus
+        routes.Add(
+            "mediator",
+            new Route(
+                "mediator/{type}/{name}",
+                new RouteValueDictionary(new { type = "string", name = "default" }),
+                new EventBusRouteHandler()));
+
 
  this route is used to listen to future messages. This mecanism doesn't handle the notification of the messages, we want it to be availble from anywhere you need in your code and we want to allow it as it should be cleaner for your app.
  

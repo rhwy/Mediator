@@ -2,7 +2,7 @@
 <package xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <id>Mediator</id>
-    <version>1.0.2123.0</version>
+    <version>1.0.2130.0</version>
     <authors>Rui Carvalho</authors>
     <owners>Rui Carvalho</owners>
     <licenseUrl>http://www.artofnet.com/projects/common/licence.txt</licenseUrl>
@@ -13,9 +13,12 @@
     <language>en-US</language>
     <dependencies>
       <dependency  id="ServiceStack.Text" version="3.2.2" />
+      <dependency id="WebActivator" version="1.4.2" />
     </dependencies>
   </metadata>
   <files>
+    <file src="Src\NugetPack\App_Start\MediatorBootstrap.cs.pp" target="content\App_Start\MediatorBootstrap.cs.pp" />
     <file src="Bins\AllAssemblies\Mediator.dll" target="lib" />
+    <file src="readme.html" target="content" />
   </files>
 </package>
